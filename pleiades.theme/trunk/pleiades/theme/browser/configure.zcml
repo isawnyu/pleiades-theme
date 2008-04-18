@@ -1,0 +1,34 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="pleiades.theme"
+  >
+
+  <!-- 'Optilux Theme' Zope 3 skin layer 
+        Register viewlets and pages for this zope 3 skin layer
+        to make sure they only apply to the 'Optilux Theme' theme.
+        You can also use this layer to override default Plone browser views
+        and viewlets only within the 'Optilux Theme' theme.
+    -->
+  <interface
+    interface=".interfaces.IThemeSpecific"
+    type="zope.publisher.interfaces.browser.IBrowserSkinType"
+    name="Pleiades Theme"
+    />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+    name="pleiades.theme.stylesheets"
+    directory="stylesheets"
+    layer=".interfaces.IThemeSpecific"
+    />
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+    name="pleiades.theme.images"
+    directory="images"
+    layer=".interfaces.IThemeSpecific"
+    />
+        
+</configure>
